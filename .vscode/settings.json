@@ -1,0 +1,23 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pycodestyleEnabled": false,
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "editor.formatOnSave": true,
+  "python.formatting.blackArgs": ["--line-length=150", "--target-version=py39"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.linting.flake8Args": [
+    "--max-line-length=150",
+    "--ignore=W293,W504",
+    "--max-complexity=20"
+  ],
+  "python.linting.flake8Path": "",
+  "python.linting.flake8Enabled": true
+}
