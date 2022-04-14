@@ -50,8 +50,8 @@ export default defineComponent({
     this.getLatestProducts();
   },
   methods: {
-    getLatestProducts() {
-      axios
+    async getLatestProducts() {
+      await axios
         .get("api/v1/latest-products/")
         .then((res) => {
           this.latestProducts = res.data;
