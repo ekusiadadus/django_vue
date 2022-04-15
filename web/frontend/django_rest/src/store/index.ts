@@ -1,8 +1,35 @@
-import { createStore } from "vuex";
+import { createStore, Store } from "vuex";
+
+declare module "@vue/runtime-core" {
+  // declare your own store states
+  interface State {
+    cart: {
+      items: Item[];
+    };
+    isAuthenticated: boolean;
+    token: string;
+    isLoading: boolean;
+  }
+
+  // provide typings for `this.$store`
+  interface ComponentCustomProperties {
+    $store: Store<State>;
+  }
+}
 
 interface Item {
   quantity: number;
-  product: { id: number };
+  product: {
+    id: number;
+    category: string;
+    name: string;
+    slug: string;
+    description: string;
+    price: number;
+    image: string;
+    thumbnail: string;
+    date_added: Date;
+  };
 }
 
 interface StateType {

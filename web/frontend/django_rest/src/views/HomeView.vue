@@ -51,6 +51,7 @@ export default defineComponent({
   },
   methods: {
     async getLatestProducts() {
+      this.$store.commit("setisLoading", true);
       await axios
         .get("api/v1/latest-products/")
         .then((res) => {
@@ -59,6 +60,7 @@ export default defineComponent({
         .catch((error) => {
           console.log(error);
         });
+      this.$store.commit("setisLoading", false);
     },
   },
 });
